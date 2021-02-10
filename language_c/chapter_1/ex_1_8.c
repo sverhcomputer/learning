@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 main() {
-  int s, t, e;
+  int s;
   int ss, st, se, fs;
 
   ss = 0;
@@ -12,24 +12,12 @@ main() {
   while ((s = getchar()) != EOF) {
     if (s == ' ')
       ++ss;
-    if (t == '\t')
+    if (s == '\t')
       ++st;
-    if (e == '\n')
-      ++se;
-  printf("Общее колличество пробелов: %d\n", ss);}
-
-  while ((t = getchar()) != EOF){
-    if (t == 'a')
-      ++st;
-  printf("Общее колличество символов конца строки: %d\n", st);}
-
-  while ((e = getchar()) != EOF){
-    if (e == '\n')
-      ++se;
-  printf("Общее колличество табуляций: %d\n", se);}
-
-  if ((e = getchar()) == EOF)
+    if (s == '\n')
+      ++se;}
+    printf("общее колличество пробелов: %d\n", ss);
+    printf("общее колличество табуляции: %d\n", st);
+    printf("общее колличество символов конца строки: %d\n", se);
     fs = ss + st + se;
-    printf("Сумма пробелов, табуляция и символов конца строки = %d\n", fs);
-
-}
+    printf("общее колличество символов табуляции, пробелов и конца строки: %d\n", fs);}
